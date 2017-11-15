@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Firstline:
+  = @address.firstline
+%p
+  %b Postcode:
+  = @address.postcode
+
+= link_to 'Edit', edit_address_path(@address)
+\|
+= link_to 'Back', addresses_path

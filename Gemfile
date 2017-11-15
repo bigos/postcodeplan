@@ -49,3 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'gmaps4rails'
+gem 'haml-rails', '~> 1.0'
+gem 'activerecord-import'
