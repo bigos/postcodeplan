@@ -10,6 +10,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1
   # GET /addresses/1.json
   def show
+    @postcode = Postcode.where(code: @address.postcode).try(:first)
   end
 
   # GET /addresses/new

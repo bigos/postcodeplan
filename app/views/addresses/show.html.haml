@@ -7,6 +7,15 @@
   %b Postcode:
   = @address.postcode
 
+%p
+  %b Approximate Location:
+  = @postcode.location_string
+
 = link_to 'Edit', edit_address_path(@address)
 \|
 = link_to 'Back', addresses_path
+
+%div{:style => "width: 800px;"}
+  #map{:style => "width: 800px; height: 400px;"}
+
+= render 'map-js'
