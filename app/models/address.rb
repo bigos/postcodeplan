@@ -28,6 +28,7 @@ class Address < ApplicationRecord
     # multiple lines in following format
     # Lidl, Cavendish Street OL6 7PF
 
+    # https://stackoverflow.com/questions/164979/uk-postcode-regex-comprehensive
     postcode_regex = /([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2})/
     fh = File.open(Rails.root.join 'import.txt')
     fh.readlines.each do |line|
