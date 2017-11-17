@@ -12,18 +12,6 @@ class Address < ApplicationRecord
     end
   end
 
-  def self.all_locations
-    output = ''
-    output << '['
-    Address.all
-      .each_with_index
-      .map do |a, i|
-      output << "['#{a.firstline}', #{a.postal_code.location_string}, i]"
-      output << ', ' if i < Address.count - 1
-    end
-    output << ']'
-  end
-
   def self.bulk_text_import
     # multiple lines in following format
     # Lidl, Cavendish Street OL6 7PF

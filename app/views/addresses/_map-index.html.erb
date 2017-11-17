@@ -3,7 +3,7 @@
 
 <script>
  var bounds = new google.maps.LatLngBounds();
- var locations = <%= raw Address.all_locations %>;
+ var locations = <%= raw location_info(@addresses) %>;
 
  var map = new google.maps.Map(document.getElementById('map'), {
    zoom: 10,
@@ -28,6 +28,8 @@
      return function() {
        infowindow.setContent(locations[i][0]);
        infowindow.open(map, marker);
+       map.setZoom(13); // zoom on the marker upon click
+       map.panTo(marker.position);
      }
    })(marker, i));
  }
