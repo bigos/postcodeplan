@@ -11,4 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require turbolinks
 //= require_tree .
+
+
+// correct way of invoking code when page is loaded
+// document.addEventListener("turbolinks:load", function() {
+//     // ...
+// });
+
+// last thing
+var isMapsApiLoaded = false;
